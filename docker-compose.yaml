@@ -1,0 +1,15 @@
+services:
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: payment_cards_db
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - database:/var/lib/postgresql
+
+volumes:
+  database:
